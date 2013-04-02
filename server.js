@@ -20,7 +20,7 @@ app.use(express.logger('dev'));
 //     compile: compile
 //   }
 // ));
-app.use(express.static(__dirname + '/app'));
+app.use(express.static(__dirname + '/'));
 
 // app.get('/', function (req, res) {
 //   res.render('index',
