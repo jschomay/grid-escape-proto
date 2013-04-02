@@ -1,7 +1,7 @@
 
-var gamejs = require('gamejs');
+gamejs = require('gamejs');
+include(['../javascript/ship.js']);
 
-var Ship = require('ship');
 var SCREEN_WIDTH = 600;
 var SCREEN_HEIGHT = 600;
 
@@ -48,7 +48,7 @@ function main() {
    var centerScreen = [(SCREEN_WIDTH - shipDim[0])/ 2, (SCREEN_HEIGHT - shipDim[1]) / 2];
    var shipPos = centerScreen;
    var shipRect = shipPos.concat(shipDim);
-   var ship = new Ship.Ship(shipRect);
+   var ship = new Ship(shipRect);
    gamejs.time.interval(gameTick);
 }
 

@@ -19,7 +19,10 @@
 <!-- Start javascript/main.js -->
     <script src="./public/yabble.js"></script>
     <script src="./public/gamejs.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="./public/include.js"></script>
     <script>
+        var gamejs;
         require.setModuleRoot('./javascript/');
         require.run('main')
     </script>

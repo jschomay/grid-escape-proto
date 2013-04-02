@@ -1,10 +1,8 @@
-var gamejs = require('gamejs');
-
 // ship
-var Ship = exports.Ship = function(rect) {
+var Ship = function(rect) {
    // call superconstructor
    Ship.superConstructor.apply(this, arguments);
-   this.speed = 20;
+   this.speed = 50;
    this.rect = new gamejs.Rect(rect);
    return this;
 };
@@ -12,6 +10,7 @@ gamejs.utils.objects.extend(Ship, gamejs.sprite.Sprite);
 
 Ship.prototype.update = function(msDuration) {
    this.rect.moveIp(0, this.speed * (msDuration/1000));
+   error
 };
 
 
