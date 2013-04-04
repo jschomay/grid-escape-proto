@@ -60,6 +60,9 @@ Much more than a simple framework, and focused on 3D, eventually I want to get i
  - __[ImpactJS](impactjs.com)__
  Premium framework, looks very solid, a standard.  Intro video looks fun and easy, I like the map editor.
 
+ - __[MelonJS](http://www.melonjs.org/)__
+ Recommended, supposed to be similar to impactjs.
+
 ### Plan
 
 _What draws me:_
