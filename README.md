@@ -57,6 +57,9 @@ Nifty drawing library for the canvas, useful in piecemiel approach maybe.
  - __[Unity3D](http://unity3d.com/)__
 Much more than a simple framework, and focused on 3D, eventually I want to get into this, but I want to go the pure coding route first.
 
+ - __[ImpactJS](impactjs.com)__
+ Premium framework, looks very solid, a standard.  Intro video looks fun and easy, I like the map editor.
+
 ### Plan
 
 _What draws me:_
@@ -70,6 +73,8 @@ I like the idea of rolling my own as much as possible.  Atom or IRF would be bes
 After coding myself a few times, I do intend to learn Unity.
 
 I'm curious what "cheating" with GameSalad will be like...
+
+At first I ignored ImpactJS since it was premium, but looking at it again, it looks nice...
 
 _What makes me pause:_
 
@@ -91,6 +96,7 @@ Looks like this is the lineup:
  4. Crafty.  Switch to Entity if desired (or use for reference).
  5. Enchant
  6. Play with GameSalad afterwards and Unity
+ 7. If these don't work, try ImpactJS 
 
 ### Results
 
