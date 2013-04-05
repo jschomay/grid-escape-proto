@@ -1,7 +1,0 @@
-/*!
-* Crafty v0.5.3
-* http://craftyjs.com
-*
-* Copyright 2010, Louis Stowasser
-* Dual licensed under the MIT or GPL licenses.
-*/
