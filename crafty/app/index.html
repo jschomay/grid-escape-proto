@@ -2,20 +2,13 @@
 <html>
 <head>
   <script src="lib/crafty.js"></script>
+  <script src="src/game.js"></script>
   <script>
-    function ready () {
-      // remove loading
-      var div = document.getElementById("loading");
-      div.parentNode.removeChild(div);
-      //start game
-      Game.start();
-    }
+    window.addEventListener('load', Game.start());
   </script>
-  <script onload="ready();" async src="src/game.js"></script>
 </head>
 <body>
   SCRIPTS COMPACTED VIA BROWSERIFY
-  SERVED WITH BROWSERVEFY
-  <div id="loading">Loading...</div>
+  SERVED WITH broswerify-middleware
 </body>
 </html>
