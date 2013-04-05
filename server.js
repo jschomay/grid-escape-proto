@@ -1,12 +1,22 @@
-// using https://github.com/ForbesLindesay/browserify-middleware
-var browserify = require('browserify-middleware');
+// enchilda runs browserify as middleware
+// https://github.com/shtylman/node-enchilada
+var enchilada = require('enchilada');
 var express = require('express');
 var app = express();
 
-//provide browserified versions of all the files in a directory
-app.use('/src', browserify('crafty/app/src'));
+app.use(enchilada({
+    src: __dirname + '/crafty/app/', // location of your js files
+    cache: false, // default false (use true for production to disable file watching)
+    compress: false, // default false
+    debug: true, // default false (enable sourcemap output with bundle)
+    watchCallback: function(filename) {console.log("Re-browserifying.  File changed:", filename, ' at ', new Date());}, // optional (use to do something clever, like tell client to reload the page)
+    routes: {
+        // 'lib/crafty.js': '.lib/crafty.js'
+    },
+    transforms: []
+}));
 
 app.use(express.static(__dirname + '/crafty/app'));
 app.use(express.logger('dev'));
 app.listen(3000);
-console.log("Express server listening on 3000");
+console.log("Express server listening on 3000, using enchilada for automatic browserifying");

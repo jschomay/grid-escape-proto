@@ -1,3 +1,6 @@
+// load crafty library
+require('../lib/crafty.js');
+
 // load components into crafty (nothing returned)
 require('./components');
 
