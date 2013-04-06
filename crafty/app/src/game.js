@@ -3,6 +3,7 @@ require('../lib/crafty.js');
 
 // load components into crafty (nothing returned)
 require('./components');
+require('./scenes');
 
 Game = {
   // This defines our grid's size and the size of each of its tiles
@@ -33,37 +34,8 @@ Game = {
     Crafty.init(Game.width(), Game.height());
     Crafty.background('rgb(249, 223, 125)');
 
-    // Player character, placed at 5, 5 on our grid
-    Crafty.e('PlayerCharacter').at(5, 5);
- 
-    // Place a tree at every edge square on our grid of 16x16 tiles
-    for (var x = 0; x < Game.map_grid.width; x++) {
-      for (var y = 0; y < Game.map_grid.height; y++) {
-        var at_edge = x == 0 || x == Game.map_grid.width - 1 || y == 0 || y == Game.map_grid.height - 1;
- 
-        if (at_edge) {
-          // Place a tree entity at the current tile
-         Crafty.e('Tree').at(x, y);
-        } else if (Math.random() < 0.06) {
-          // Place a bush entity at the current tile
-          Crafty.e('Bush').at(x, y);
-        }
-      }
-    }
-
-    // Generate up to five villages on the map in random locations
-    var max_villages = 5;
-    for (var x = 0; x < Game.map_grid.width; x++) {
-      for (var y = 0; y < Game.map_grid.height; y++) {
-        if (Math.random() < 0.02) {
-          Crafty.e('Village').at(x, y);
-
-          if (Crafty('Village').length >= max_villages) {
-            return;
-          }
-        }
-      }
-    }
+    // Simply start the "Game" scene to get things going
+    Crafty.scene('Game');
 
   }
 }
