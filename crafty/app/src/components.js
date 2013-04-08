@@ -41,6 +41,13 @@ Crafty.c('Bush', {
   },
 });
 
+// A Rock is just an Actor with a certain sprite
+Crafty.c('Rock', {
+  init: function() {
+    this.requires('Actor, Solid, spr_rock');
+  },
+});
+
 // This is the player-controlled character
 Crafty.c('PlayerCharacter', {
   init: function() {
@@ -58,9 +65,9 @@ Crafty.c('PlayerCharacter', {
       .animate('PlayerMovingRight', 0, 1, 2)
       .animate('PlayerMovingDown',  0, 2, 2)
       .animate('PlayerMovingLeft',  0, 3, 2);
- 
+
     // Watch for a change of direction and switch animations accordingly
-    var animation_speed = 8;
+    var animation_speed = 10;
     this.bind('NewDirection', function(data) {
       if (data.x > 0) {
         this.animate('PlayerMovingRight', animation_speed, -1);
@@ -96,7 +103,6 @@ Crafty.c('PlayerCharacter', {
   // Respond to this player visiting a village
   visitVillage: function(data) {
     villlage = data[0].obj;
-    Crafty.audio.play('knock');
     villlage.visit();
   }
 });
@@ -110,6 +116,7 @@ Crafty.c('Village', {
   // Process a visitation with this village
   visit: function() {
     this.destroy();
+    Crafty.audio.play('knock');
     Crafty.trigger('VillageVisited', this);
   }
 });
