@@ -96,6 +96,7 @@ Crafty.c('PlayerCharacter', {
   // Respond to this player visiting a village
   visitVillage: function(data) {
     villlage = data[0].obj;
+    Crafty.audio.play('knock');
     villlage.visit();
   }
 });
