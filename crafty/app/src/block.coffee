@@ -24,7 +24,7 @@ Crafty.c 'Block',
     ctx.fillRect(pos._x, pos._y, pos._w, pos._h)
 
     ctx.lineWidth = 1
-    ctx.strokeStyle = "#333333"
+    ctx.strokeStyle = "#555555"
     ctx.beginPath()
     ctx.moveTo(pos._x, pos._y)
     ctx.lineTo(pos._x + pos._w, pos._y)
@@ -39,4 +39,3 @@ Crafty.c 'Block',
     ctx.lineTo(pos._x, pos._y +  pos._h)
     ctx.stroke()
     ctx.restore()
-    
