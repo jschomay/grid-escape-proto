@@ -1,6 +1,7 @@
 Crafty.c 'Block',
   ready: true
   init: ->
+    @_color = 'black'
     @requires "Actor, Collision"
     @attr
       w: Game.map_grid.tile.width
@@ -10,7 +11,7 @@ Crafty.c 'Block',
       @_draw obj.ctx, obj.pos
 
   color: (color) ->
-    @_color = color || 'black'
+    @_color = color
 
   _draw: (ctx, po)->
     ctx.save()

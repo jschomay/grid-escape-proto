@@ -30,38 +30,48 @@ Crafty.c('Actor', {
   },
 });
 
-// A Tree is just an Actor with a certain sprite
-Crafty.c('Tree', {
+// exit
+Crafty.c('Exit', {
   init: function() {
-    this.requires('Actor, Solid, spr_tree');
+    this.requires('Actor, Color');
+    this.color('green');
+    this.bind("Draw", function (obj) {
+      // Pass the Canvas context and the drawing region.
+      this._draw(obj.ctx, obj.pos);
+    });
+
   },
-});
+  _draw: function (ctx, po) {
+    ctx.save();
+    pos = {
+      _x: po._x + 1,
+      _y: po._y + 1,
+      _w: po._w - 2,
+      _h: po._h - 2
+    };
 
-// A Bush is just an Actor with a certain sprite
-Crafty.c('Bush', {
-  init: function() {
-    this.requires('Actor, Solid, spr_bush');
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "#555555";
+    ctx.beginPath();
+    ctx.moveTo(pos._x, pos._y);
+    ctx.lineTo(pos._x + pos._w, pos._y);
+    ctx.lineTo(pos._x + pos._w, pos._y +  pos._h);
+    ctx.lineTo(pos._x, pos._y +  pos._h);
+    ctx.closePath();
+    ctx.stroke();
+
+
+    ctx.fillStyle = "black";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(pos._x+pos._w/2, pos._y+pos._h/2, pos._w/3, 0, Math.PI*2, true) ;
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.restore();
   },
-});
-
-// A Rock is just an Actor with a certain sprite
-Crafty.c('Rock', {
-  init: function() {
-    this.requires('Actor, Solid, spr_rock');
-  },
-});
-
-
-// A village is a tile on the grid that the PC must visit in order to win the game
-Crafty.c('Village', {
-  init: function() {
-    this.requires('Actor, spr_village');
-  },
-
-  // Process a visitation with this village
-  visit: function() {
+  exit: function() {
     this.destroy();
-    Crafty.audio.play('knock');
-    Crafty.trigger('VillageVisited', this);
+    Crafty.trigger('endLevel', this);
   }
 });
