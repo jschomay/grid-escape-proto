@@ -1,5 +1,6 @@
 require("./player.coffee");
 require("./block.coffee");
+require('./board.coffee');
 
 // The Grid component allows an element to be located
 //  on a grid of tiles
