@@ -1,18 +1,16 @@
 // load crafty library
 require('../lib/crafty.js');
 
-// load components into crafty (nothing returned)
-require('./components');
-require('./scenes');
+require('./scenes.coffee');
 
 Game = {
   // This defines our grid's size and the size of each of its tiles
   map_grid: {
-    width:  24,
-    height: 16,
+    width:  5,
+    height: 5,
     tile: {
-      width:  16,
-      height: 16
+      width:  80,
+      height: 80
     }
   },
 

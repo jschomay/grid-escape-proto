@@ -1,4 +1,5 @@
 require("./player.coffee");
+require("./block.coffee");
 
 // The Grid component allows an element to be located
 //  on a grid of tiles
@@ -9,7 +10,6 @@ Crafty.c('Grid', {
       h: Game.map_grid.tile.height
     })
   },
-
   // Locate this entity at the given position on the grid
   at: function(x, y) {
     if (x === undefined && y === undefined) {
