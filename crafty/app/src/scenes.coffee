@@ -10,7 +10,7 @@ Crafty.scene 'Game', ->
       Crafty.e("Block").at(i,y)
 
   # Player character, placed at 5, 5 on our grid
-  # @player = Crafty.e('PlayerCharacter').at(5, 5)
+  @player = Crafty.e('PlayerCharacter').at(2, 2)
 
 
 
