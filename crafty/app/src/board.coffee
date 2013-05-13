@@ -13,8 +13,8 @@ Crafty.c 'Board',
     loop
       exitX = Crafty.math.randomInt 0, Game.map_grid.width-1
       exitY = Crafty.math.randomInt 0, Game.map_grid.height-1
-      console.log exitX,exitY
       break if avoidStartPos exitX, exitY
+    console.log exitX,exitY
 
     @exit = Crafty.e('Exit').at exitX, exitY
 
