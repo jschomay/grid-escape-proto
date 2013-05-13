@@ -1,7 +1,7 @@
 Crafty.c 'Block',
   ready: true
   init: ->
-    @requires "Actor"
+    @requires "Actor, Collision"
     @attr
       w: Game.map_grid.tile.width
       h: Game.map_grid.tile.height

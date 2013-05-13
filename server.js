@@ -8,7 +8,7 @@ app.use(enchilada({
     src: __dirname + '/crafty/app/', // location of your js files
     cache: false, // default false (use true for production to disable file watching)
     compress: false, // default false
-    debug: true, // default false (enable sourcemap output with bundle)
+    debug: false, // default false (enable sourcemap output with bundle)
     watchCallback: function(filename) {console.log("Re-browserifying.  File changed:", filename, ' at ', new Date());}, // optional (use to do something clever, like tell client to reload the page)
     routes: {
         // 'lib/crafty.js': '.lib/crafty.js'

@@ -3,19 +3,20 @@
 Crafty.c 'PlayerCharacter', 
   ready: true
   init: -> 
-    @requires('Actor, Fourway')
-      .fourway(2)
-      # .stopOnSolids()
+    @requires('Actor, Fourway, Collision')
+    .collision(new Crafty.circle(@_w/2, @_h/2, @_w/4))
+    .fourway(3)
+    .onHit 'Block', @hitBlock
 
     @bind "Draw", (obj)->
       # Pass the Canvas context and the drawing region.
       @_draw obj.ctx, obj.pos
 
-  # // Registers a stop-movement function to be called when
-  # //  this entity hits an entity with the "Solid" component
-  stopOnSolids: ->
-    @onHit 'Solid', @stopMovement
-    @
+  hitBlock: (data) ->
+    for collision in data
+      block = collision.obj
+      block.destroy()
+      console.log "Block destroyed"
 
   # // Stops the movement
   stopMovement: ->
@@ -34,7 +35,7 @@ Crafty.c 'PlayerCharacter',
 
     ctx.fillStyle = "blue"
     ctx.beginPath()
-    ctx.arc(pos._x+pos._w/2, pos._y+pos._h/2, pos._w/3, 0, Math.PI*2, true) 
+    ctx.arc(pos._x+pos._w/2, pos._y+pos._h/2, pos._w/4, 0, Math.PI*2, true) 
     ctx.closePath()
     ctx.fill()
     ctx.restore()

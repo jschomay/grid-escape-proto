@@ -14,7 +14,7 @@ Crafty.c 'Board',
     for x in [0..Game.map_grid.width-1]
       @_board[x] = new Array(Game.map_grid.height)
       for y in [0..Game.map_grid.height-1]
-        if avoidStartPos(x,y) and Crafty.math.randomInt 1,4
+        if avoidStartPos(x,y) and Crafty.math.randomInt 0,4
           @_board[x][y] = Crafty.e("Block").at(x,y)
 
     # Player character, placed at 5, 5 on our grid
