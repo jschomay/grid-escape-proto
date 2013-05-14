@@ -2,6 +2,6 @@ I'm liking Crafty.  I've just gone through a tutorial and now I've been figuring
 
 As of now, I have a simple, working game (very stripped features!).
 
-My plan is to move forward with Crafty.  I'm going to fork this into a new repo and work from there from this point on.
+My plan is to move forward with Crafty.  I might to fork this into a new repo and work from there from this point on.
 
 At some point, maybe on another project, I'd like to still look at Enchant and Easel.

@@ -1,5 +1,6 @@
 require("./player.coffee");
 require("./block.coffee");
+require("./solid.coffee");
 require('./board.coffee');
 require('./exit.coffee');
 

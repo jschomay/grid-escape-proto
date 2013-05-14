@@ -14,15 +14,15 @@ Crafty.c 'Board',
       exitX = Crafty.math.randomInt 0, Game.map_grid.width-1
       exitY = Crafty.math.randomInt 0, Game.map_grid.height-1
       break if avoidStartPos exitX, exitY
-    console.log exitX,exitY
 
-    @exit = Crafty.e('Exit').at exitX, exitY
+    Crafty.e('Exit').at exitX, exitY
 
     for x in [0..Game.map_grid.width-1]
       for y in [0..Game.map_grid.height-1]
-        if avoidStartPos(x,y) and Crafty.math.randomInt 0,4
-          Crafty.e("Block").at(x,y)
+        if avoidStartPos(x,y) and Crafty.math.randomInt 0,20
+          blockType = if Crafty.math.randomInt(0,6) then "Block"  else "Solid"
+          Crafty.e(blockType).at(x,y)
 
     # Player character, placed at 5, 5 on our grid
-    @player = Crafty.e('PlayerCharacter').at(Game.state.startPos.x, Game.state.startPos.y)
+    Crafty.e('PlayerCharacter').at(Game.state.startPos.x, Game.state.startPos.y)
 
